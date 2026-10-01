@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Brasil — 2023 a 2026</title>
+<style>
+:root{--cream:#f7efd9;--green:#0b7a3a;--yellow:#f9c20e;--blue:#07579f;--red:#ef342f;--ink:#163c2b;--font:"Poppins","Montserrat",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-snap-type:y mandatory}body{margin:0;background:var(--cream);font-family:var(--font);overflow-x:hidden;color:#111}button,input{font:inherit}img,video,iframe{display:block;max-width:100%}.screen{height:100svh;min-height:100svh;scroll-snap-align:start;scroll-snap-stop:always;position:relative;overflow:hidden}
+/* CAPA */
+.cover{background:var(--cream)}.cover picture,.cover img{width:100%;height:100%}.cover img{object-fit:cover;object-position:center}.cover-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:rgba(6,116,51,.48);font-weight:800;letter-spacing:.06em;text-transform:uppercase;pointer-events:none}.scroll-hint{position:absolute;z-index:2;left:50%;bottom:72px;color:var(--green);transform:translateX(-50%);pointer-events:none}.scroll-mouse{display:block;width:28px;height:45px;border:3px solid currentColor;border-radius:18px;position:relative}.scroll-mouse::before{content:"";position:absolute;left:50%;top:8px;width:5px;height:9px;border-radius:4px;background:currentColor;transform:translateX(-50%);animation:scroll-wheel 1.6s ease-in-out infinite}@keyframes scroll-wheel{50%{transform:translate(-50%,13px);opacity:.2}100%{transform:translate(-50%,0);opacity:1}}
+/* LUGARES */
+.selector{background:var(--cream);display:grid;grid-template-rows:auto 1fr}.selector-intro{background:var(--green);color:#fff;text-align:center;padding:24px 22px}.selector-intro p{margin:0 auto;max-width:1100px;font-size:clamp(1.45rem,2.8vw,3.2rem);line-height:1.03;font-weight:800}.selector-intro strong{color:var(--yellow)}.places-wrap{position:relative;display:grid;align-items:center;min-height:0}.places{display:flex;align-items:center;gap:clamp(18px,2.6vw,42px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding:clamp(26px,4vw,52px) 36vw clamp(52px,7vw,90px);touch-action:pan-x;overscroll-behavior-x:contain}.places::-webkit-scrollbar{display:none}.place{flex:0 0 min(34vw,460px);scroll-snap-align:center;border:0;padding:0;background:transparent;cursor:pointer;opacity:.46;transform:scale(.84);transition:transform .55s cubic-bezier(.22,.8,.24,1),opacity .4s ease,filter .4s ease;filter:saturate(.78)}.place.is-active{opacity:1;transform:scale(1);filter:saturate(1)}.place:focus-visible{outline:3px solid var(--yellow);outline-offset:8px}.place-media{width:100%;aspect-ratio:1.15;display:grid;place-items:center}.place-media img{width:100%;height:100%;object-fit:contain}.asset-placeholder{width:100%;height:100%;display:grid;place-items:center;border:1px dashed rgba(6,116,51,.16);color:rgba(6,116,51,.28);font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.place-tag{width:max-content;margin:16px auto 0;padding:10px 24px 11px;background:var(--green);color:#fff;font-size:clamp(1rem,1.7vw,1.55rem);font-weight:800;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .35s ease}.place.is-active .place-tag{opacity:1;transform:none}.selector-help{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(6,116,51,.54);white-space:nowrap}
+/* DADOS + VIDEO */
+.split{display:grid;grid-template-columns:1fr 1fr}.video-panel{position:relative;overflow:hidden;background:#d8d0c0}.video-panel video{width:100%;height:100%;object-fit:cover}.video-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:rgba(0,0,0,.34);font-size:.78rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.copy-panel{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(38px,6vw,96px);color:#fff}.copy-panel h2{margin:0;color:var(--yellow);font-size:clamp(4rem,6.4vw,7.4rem);line-height:.82;letter-spacing:-.05em}.copy-panel p{margin:18px 0 0;max-width:560px;font-size:clamp(1.4rem,2.45vw,2.75rem);line-height:.98}.copy-panel strong{color:var(--yellow)}.share{margin-top:32px;display:inline-flex;align-items:center;gap:18px;border:3px solid var(--yellow);background:var(--red);color:#fff;padding:clamp(13px,1.3vw,19px) clamp(22px,2.2vw,34px);border-radius:20px;font-size:clamp(1.45rem,2.2vw,2.35rem);font-weight:800;line-height:1;cursor:pointer;transition:.25s ease}.share svg{width:1.25em;height:1.25em;flex:none;stroke:currentColor;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.share:hover{background:var(--yellow);color:var(--green);transform:translateY(-2px)}.bf{background:var(--green)}.bf .share{background:transparent}.bf .share:hover{background:var(--yellow);color:var(--green)}.paa .share:hover{background:var(--yellow);color:var(--red)}
+/* CAMPANHA */
+.campaign{background:#000;display:block;padding:0}.campaign-frame{width:100%;height:100%;background:#000;position:relative;overflow:hidden}.campaign-frame iframe,.campaign-frame video{width:100%;height:100%;border:0;object-fit:cover}.play-placeholder{position:absolute;inset:0;display:grid;place-items:center}.play-ring{width:110px;height:110px;border:1px solid rgba(255,255,255,.72);border-radius:50%;position:relative}.play-ring::after{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-top:16px solid transparent;border-bottom:16px solid transparent;border-left:28px solid #fff}
+/* QUIZ */
+.game{background:var(--yellow);color:var(--green);display:grid;place-items:center;padding:clamp(28px,4vw,58px)}.quiz-drag{position:relative;width:min(980px,92vw);min-height:min(720px,82svh);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;touch-action:none;user-select:none;cursor:ns-resize;outline:none}.quiz-value{font-size:clamp(4.5rem,10vw,9.5rem);line-height:1.08;font-weight:900;letter-spacing:.01em;color:var(--red);transition:font-size .35s ease,color .35s ease}.quiz-description{width:min(100%,570px);margin:26px 0 0;text-align:left;font-size:clamp(1.25rem,2.3vw,2.1rem);line-height:1.05;font-weight:700}.quiz-cue{position:absolute;bottom:3%;display:grid;justify-items:center;gap:10px;font-size:clamp(.72rem,1.1vw,.92rem);font-weight:900;letter-spacing:.09em;line-height:1.15}.quiz-cue .arrow{font-size:2.2rem;line-height:1;animation:quiz-bob 1.4s ease-in-out infinite}.quiz-track{position:absolute;right:0;top:50%;bottom:auto;width:4px;height:min(560px,70%);background:rgba(239,52,47,.5);border-radius:4px;transform:translateY(-50%)}.quiz-track::after{content:"";position:absolute;left:50%;top:calc(var(--progress,0) * 1%);width:18px;height:18px;border-radius:50%;background:var(--red);transform:translate(-50%,-50%);box-shadow:0 0 0 7px var(--yellow)}.quiz-result{position:absolute;inset:auto 0 12%;opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .5s ease,transform .5s ease}.quiz-result .result-value{font-size:clamp(4rem,10vw,8rem);font-weight:900;letter-spacing:.01em;line-height:1.08;color:var(--red)}.quiz-result p{width:min(100%,500px);margin:16px auto 0;text-align:left;font-size:clamp(1.2rem,2vw,1.8rem);line-height:1.05;font-weight:700}.game.is-revealed .quiz-cue{opacity:0}.game.is-revealed .quiz-description{margin-top:14px}.game.is-revealed .quiz-result{position:static;margin-top:clamp(48px,7vh,80px);opacity:1;transform:none}.game.is-revealed .quiz-value{font-size:clamp(4rem,8vw,7rem);color:var(--red)}@keyframes quiz-bob{50%{transform:translateY(10px)}}
+.quiz-cue{left:auto;right:0;top:calc(50% - min(280px,35%) - 132px);bottom:auto;width:max-content;gap:16px;color:var(--red);transform:translateX(50%);font-size:clamp(1rem,1.45vw,1.35rem)}.game-layout{width:min(1400px,94vw);min-height:min(720px,82svh);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:clamp(24px,5vw,86px);align-items:center}.quiz-drag{width:100%;min-height:min(720px,82svh);align-items:flex-start;text-align:left}.quiz-result p{margin-left:0;margin-right:0}.game.is-revealed .quiz-result{align-self:stretch;text-align:left}.quiz-plate-stage{display:grid;place-items:center}.quiz-plate{display:block;width:min(100%,420px);height:auto;pointer-events:none}
+/* PAA */
+.paa{background:var(--red)}.paa .copy-panel{background:var(--red)}.paa .eyebrow{font-size:clamp(1rem,1.7vw,1.7rem);line-height:1;font-weight:800;margin-bottom:12px}.paa .eyebrow mark{background:var(--yellow);color:var(--red);padding:0 .12em}.paa h2{color:var(--yellow);font-size:clamp(3.4rem,5.3vw,6rem)}.paa p{font-size:clamp(1.35rem,2.35vw,2.45rem)}
+/* SAIBA MAIS */
+.more{height:100svh;min-height:100svh;overflow:hidden;background:var(--blue);display:grid;place-items:center;padding:clamp(32px,4vw,54px) 24px;color:#fff}.more-content{text-align:center}.more h2{margin:0;font-size:clamp(2.8rem,5vw,6rem);line-height:.9;letter-spacing:-.045em}.more-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:26px}.more-btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-width:min(100%,390px);border:3px solid var(--yellow);border-radius:18px;padding:18px 28px;background:transparent;color:#fff;text-decoration:none;font-size:clamp(1.1rem,1.7vw,1.7rem);font-weight:800;line-height:1;cursor:pointer;transition:.25s ease}.more-btn.secondary{background:transparent}.more-btn:hover{background:var(--yellow);color:var(--blue);transform:translateY(-3px)}.more-btn svg{width:1.3em;height:1.3em;stroke:currentColor;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}.more-mockup{display:block;width:min(450px,52vw);max-height:42svh;height:auto;margin:clamp(24px,3vw,38px) auto 0}
+@media(max-width:820px){html{scroll-snap-type:none}.screen{height:auto;min-height:100svh}.places{padding:28px 24vw 70px;gap:18px}.place{flex-basis:58vw}.split,.game-grid{grid-template-columns:1fr}.video-panel{min-height:48svh}.copy-panel{min-height:52svh;padding:34px 26px}.game{min-height:auto;padding:58px 22px 80px}.plate-stage{min-height:400px}}
+@media(max-width:820px){.game-layout{grid-template-columns:1fr;gap:8px}.quiz-drag{min-height:70svh}.quiz-cue{left:50%;right:auto;transform:translateX(-50%)}.quiz-plate-stage{padding-bottom:30px}.quiz-plate{width:min(62vw,300px)}.more{height:auto;min-height:100svh;overflow:visible}.more-mockup{width:min(340px,78vw);max-height:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<section class="screen cover" id="inicio">
+  <picture>
+    <source media="(max-width:820px)" srcset="assets/capa-mobile.jpg">
+    <img src="capa.svg" alt="O Brasil — de 2023 a 2026" onerror="this.style.display='none';document.querySelector('.cover-placeholder').style.display='grid';">
+  </picture>
+  <div class="scroll-hint" aria-hidden="true"><span class="scroll-mouse"></span></div>
+</section>
+
+<section class="screen selector" id="lugares">
+  <div class="selector-intro"><p>As políticas públicas chegaram<br>a <strong>diferentes lugares</strong> da<br><strong>vida dos brasileiros.</strong></p></div>
+  <div class="places-wrap">
+    <div class="places" id="placesScroller" tabindex="0" role="region" aria-label="Carrossel de lugares">
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="casa.png" alt="Na Casa" onerror="this.style.display='none'"></div><div class="place-tag">NA CASA</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="rua.png" alt="Na Rua" onerror="this.style.display='none'"></div><div class="place-tag">NA RUA</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="praca.png" alt="Na Praça" onerror="this.style.display='none'"></div><div class="place-tag">NA PRAÇA</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="escola.png" alt="Na Escola" onerror="this.style.display='none'"></div><div class="place-tag">NA ESCOLA</div></button>
+      <button class="place is-active" type="button" data-enabled="true" data-target="#bolsa-familia"><div class="place-media"><img src="mesa.png" alt="Na Mesa" onerror="this.style.display='none'"></div><div class="place-tag">NA MESA</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="trabalho.png" alt="No Trabalho" onerror="this.style.display='none'"></div><div class="place-tag">NO TRABALHO</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="saude.png" alt="Na Saúde" onerror="this.style.display='none'"></div><div class="place-tag">NA SAÚDE</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="terra.png" alt="Na Terra" onerror="this.style.display='none'"></div><div class="place-tag">NA TERRA</div></button>
+      <button class="place" type="button" data-enabled="false"><div class="place-media"><img src="mundo.png" alt="No Mundo" onerror="this.style.display='none'"></div><div class="place-tag">NO MUNDO</div></button>
+    </div>
+    <div class="selector-help">Arraste para explorar</div>
+  </div>
+</section>
+
+<section class="screen split bf" id="bolsa-familia">
+  <div class="video-panel"><video autoplay muted loop playsinline preload="auto" aria-label="Vídeo sobre o Bolsa Família"><source src="bolsafamilia.mp4" type="video/mp4"></video></div>
+  <div class="copy-panel"><h2>19,29 milhões<br>de famílias</h2><p><strong>receberam o Bolsa Família</strong> em setembro de 2026, alcançando <strong>50,1 milhões de pessoas.</strong></p><button class="share" type="button" data-share="bf"><span>Compartilhe</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 24 32 14M16 24l16 10"/><circle cx="12" cy="24" r="5"/><circle cx="36" cy="12" r="5"/><circle cx="36" cy="36" r="5"/></svg></button></div>
+</section>
+
+<section class="screen campaign" id="campanha"><div class="campaign-frame"><video autoplay muted loop playsinline preload="auto" aria-label="Vídeo sobre o Bolsa Família"><source src="bolsafamilia.mp4" type="video/mp4"></video></div></section>
+
+<section class="screen game" id="game">
+  <div class="game-layout">
+    <div class="quiz-drag" id="quizDrag" tabindex="0" role="slider" aria-label="Arraste para baixo para acompanhar a redução da insegurança alimentar severa" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="quiz-value" id="quizValue">17,2 MILHÕES</div>
+      <p class="quiz-description" id="quizDescription">de brasileiros viviam em insegurança alimentar severa em 2022.</p>
+      <div class="quiz-track" id="quizTrack" aria-hidden="true"></div>
+      <div class="quiz-cue" id="quizCue"><span>ARRASTE PARA VER O QUE MUDOU</span><span class="arrow">↓</span></div>
+      <div class="quiz-result" aria-live="polite"><div class="result-value">↓ 85%</div><p><strong>14,7 milhões de pessoas</strong><br>deixaram de passar fome.</p></div>
+    </div>
+    <div class="quiz-plate-stage"><img class="quiz-plate" src="prato.gif" alt="Prato de comida brasileiro"></div>
+  </div>
+</section>
+
+<section class="screen split paa" id="paa">
+  <div class="video-panel"><video autoplay muted loop playsinline preload="auto" aria-label="Vídeo sobre agricultores e o PAA"><source src="agricultor.mp4" type="video/mp4"></video></div>
+  <div class="copy-panel"><div class="eyebrow">DA TERRA <mark>PARA A MESA</mark></div><h2>376,6 mil toneladas<br>de alimentos</h2><p>adquiridas pelo PAA desde a retomada do programa, viraram comida na mesa de <strong>8 milhões de pessoas.</strong></p><button class="share" type="button" data-share="paa"><span>Compartilhe</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 24 32 14M16 24l16 10"/><circle cx="12" cy="24" r="5"/><circle cx="36" cy="12" r="5"/><circle cx="36" cy="36" r="5"/></svg></button></div>
+</section>
+
+<section class="screen more" id="saiba-mais">
+  <div class="more-content">
+    <h2>Governo do Brasil<br>do lado do povo brasileiro</h2>
+    <div class="more-actions">
+      <a class="more-btn" href="#lugares">Clique aqui e saiba mais</a>
+      <button class="more-btn secondary" id="sharePage" type="button"><span>Compartilhe no WhatsApp</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 24 32 14M16 24l16 10"/><circle cx="12" cy="24" r="5"/><circle cx="36" cy="12" r="5"/><circle cx="36" cy="36" r="5"/></svg></button>
+    </div>
+    <img class="more-mockup" src="mockup.png" alt="Mockup da campanha">
+  </div>
+</section>
+
+<script>
+const scroller=document.getElementById('placesScroller');const originalPlaces=[...document.querySelectorAll('.place')];originalPlaces.forEach((place,index)=>place.dataset.slide=index);const lastClone=originalPlaces.at(-1).cloneNode(true),firstClone=originalPlaces[0].cloneNode(true);[lastClone,firstClone].forEach(clone=>{clone.dataset.clone='true';clone.setAttribute('aria-hidden','true');clone.tabIndex=-1});scroller.prepend(lastClone);scroller.append(firstClone);const places=[...scroller.querySelectorAll('.place')];let activeIndex=Math.max(0,originalPlaces.findIndex(place=>place.classList.contains('is-active'))),scrollEndTimer,carouselTimer;
+document.querySelectorAll('.video-panel video,.campaign video').forEach(video=>{video.muted=true;const startVideo=()=>video.play().catch(()=>{});video.addEventListener('canplay',startVideo,{once:true});startVideo()});
+function setActive(index,{center=true,behavior='smooth',followTarget=false}={}){const previousIndex=activeIndex;activeIndex=(index+originalPlaces.length)%originalPlaces.length;let place=originalPlaces[activeIndex];if(previousIndex===originalPlaces.length-1&&activeIndex===0)place=firstClone;if(previousIndex===0&&activeIndex===originalPlaces.length-1)place=lastClone;places.forEach(item=>{const isActive=Number(item.dataset.slide)===activeIndex;item.classList.toggle('is-active',isActive);item.setAttribute('aria-pressed',isActive)});if(center)centerPlace(place,behavior);if(followTarget&&place.dataset.target)setTimeout(()=>document.querySelector(place.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'}),280)}
+function centerPlace(el,behavior='smooth'){const target=el.offsetLeft-(scroller.clientWidth-el.offsetWidth)/2;scroller.scrollTo({left:target,behavior})}
+function setNearestActive(){const center=scroller.scrollLeft+scroller.clientWidth/2;let nearestPlace=places[0],distance=Infinity;places.forEach(place=>{const placeCenter=place.offsetLeft+place.offsetWidth/2;const nextDistance=Math.abs(placeCenter-center);if(nextDistance<distance){distance=nextDistance;nearestPlace=place}});const nearestIndex=Number(nearestPlace.dataset.slide);setActive(nearestIndex,{center:false});if(nearestPlace.dataset.clone==='true')requestAnimationFrame(()=>centerPlace(originalPlaces[nearestIndex],'auto'))}
+function stopCarousel(){clearInterval(carouselTimer)}function startCarousel(){stopCarousel();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)carouselTimer=setInterval(()=>setActive(activeIndex+1),3200)}
+window.addEventListener('load',()=>{setActive(activeIndex,{behavior:'auto'});startCarousel()});
+window.addEventListener('resize',()=>setActive(activeIndex,{behavior:'auto'}));
+scroller.addEventListener('scroll',()=>{clearTimeout(scrollEndTimer);scrollEndTimer=setTimeout(setNearestActive,80)},{passive:true});
+places.forEach(place=>place.addEventListener('click',()=>setActive(Number(place.dataset.slide),{followTarget:true})));
+scroller.addEventListener('pointerdown',stopCarousel);scroller.addEventListener('pointerup',startCarousel);scroller.addEventListener('pointercancel',startCarousel);scroller.addEventListener('mouseenter',stopCarousel);scroller.addEventListener('mouseleave',startCarousel);scroller.addEventListener('focusin',stopCarousel);scroller.addEventListener('focusout',startCarousel);
+scroller.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();setActive(activeIndex+(event.key==='ArrowRight'?1:-1));}});
+const game=document.getElementById('game'),quizDrag=document.getElementById('quizDrag'),quizValue=document.getElementById('quizValue'),quizDescription=document.getElementById('quizDescription'),quizTrack=document.getElementById('quizTrack');let quizProgress=0,dragStartY=0,dragStartProgress=0;
+function renderQuiz(){const people=17.2-(14.7*quizProgress/100);const value=people.toFixed(1).replace('.',',')+' MILHÕES';quizValue.textContent=value;quizDescription.textContent=quizProgress>=99?'em 2024':'de brasileiros viviam em insegurança alimentar severa em 2022.';quizTrack.style.setProperty('--progress',quizProgress);quizDrag.setAttribute('aria-valuenow',Math.round(quizProgress));game.classList.toggle('is-revealed',quizProgress>=99)}
+function setQuizProgress(value){quizProgress=Math.max(0,Math.min(100,value));renderQuiz()}
+quizDrag.addEventListener('pointerdown',event=>{dragStartY=event.clientY;dragStartProgress=quizProgress;quizDrag.setPointerCapture(event.pointerId)});quizDrag.addEventListener('pointermove',event=>{if(!quizDrag.hasPointerCapture(event.pointerId))return;setQuizProgress(dragStartProgress+(event.clientY-dragStartY)/Math.max(1,quizDrag.clientHeight)*115)});quizDrag.addEventListener('pointerup',event=>{if(quizDrag.hasPointerCapture(event.pointerId))quizDrag.releasePointerCapture(event.pointerId);if(quizProgress>92)setQuizProgress(100)});quizDrag.addEventListener('keydown',event=>{const steps={ArrowDown:8,ArrowRight:8,ArrowUp:-8,ArrowLeft:-8,PageDown:20,PageUp:-20};if(event.key in steps){event.preventDefault();setQuizProgress(quizProgress+steps[event.key])}else if(event.key==='End'){event.preventDefault();setQuizProgress(100)}else if(event.key==='Home'){event.preventDefault();setQuizProgress(0)}});renderQuiz();
+function shareOnWhatsApp(message){const learnMoreUrl=location.href.split('#')[0]+'#saiba-mais';window.open('https://wa.me/?text='+encodeURIComponent(message+'\n\n🔎 Saiba mais: '+learnMoreUrl),'_blank','noopener')}
+document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',()=>{const message=button.dataset.share==='bf'?'🇧🇷 *Bolsa Família*\n19,29 milhões de famílias receberam o benefício em setembro de 2026, alcançando 50,1 milhões de pessoas. 💛':'🌾 *Da terra para a mesa*\n376,6 mil toneladas de alimentos adquiridos pelo PAA ajudaram a levar comida à mesa de 8 milhões de pessoas. 🍽️';shareOnWhatsApp(message)}));
+document.getElementById('sharePage')?.addEventListener('click',()=>shareOnWhatsApp('🇧🇷 *Governo do Brasil, do lado do povo brasileiro.*\nConheça as políticas públicas que chegaram a diferentes lugares da vida dos brasileiros. ✨'));
+</script>
+</body>
+</html>
